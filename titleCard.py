@@ -11,26 +11,36 @@ screen = pygame.display.set_mode([WIDTH, HEIGHT])
 pygame.display.set_caption("Yahtzee")
 timer = pygame.time.Clock()
 fps = 60
+
+##Font size
 font = pygame.font.Font('freesansbold.ttf', 18)
+smallText = pygame.font.Font("freesansbold.ttf",20)
+midText = pygame.font.Font('freesansbold.ttf', 50)
+largeText = pygame.font.Font('freesansbold.ttf',115)
+
+##Colors
 background = (128, 128, 128)
 white = (255, 255, 255)
 black = (0, 0, 0)
 green = (0, 200, 0)
 red = (200, 0, 0)
+
 numbers = [0, 0, 0, 0, 0,]
 roll = False
 
-	#(left, up, width, height)
-leftAlign = WIDTH/2 - 50
-topOne = 300
-middleOne = 450
-bottomOne = 600
-buttonWidth = 100
-buttonHeight = 50
+##Left/Right alignment
+centered = WIDTH/2 - 50
+left = 100
+right = 400
 
-smallText = pygame.font.Font("freesansbold.ttf",20)
-midText = pygame.font.Font('freesansbold.ttf', 50)
-largeText = pygame.font.Font('freesansbold.ttf',115)
+##Up/Down alignment
+topMenuButton = 300
+middleMenuButton = 450
+bottomMenuButton = 600
+
+##Button size
+menuButtonWidth = 100
+menuButtonHeight = 50
 
 def text_objects(text, font):
     textSurface = font.render(text, True, white)
@@ -79,8 +89,8 @@ def rules_page():
 
         mouse = pygame.mouse.get_pos()
 
-        Back = button("Back", leftAlign, middleOne, buttonWidth, buttonHeight, black, green, "Back")
-        Quit = button("Exit", leftAlign, bottomOne, buttonWidth, buttonHeight, black, red, "Quit")
+        Back = button("Back", left, bottomMenuButton, menuButtonWidth, menuButtonHeight, black, green, "Back")
+        Quit = button("Exit", right, bottomMenuButton, menuButtonWidth, menuButtonHeight, black, red, "Quit")
 
         pygame.display.update()
         timer.tick(15)
@@ -109,9 +119,9 @@ def game_intro():
 
         mouse = pygame.mouse.get_pos()
 
-        Rules = button("Rules", leftAlign, topOne, buttonWidth, buttonHeight, black, green, "Rules")
-        Play = button("Play", leftAlign, middleOne, buttonWidth, buttonHeight, black, green, "Play")
-        Quit = button("Exit", leftAlign, bottomOne, buttonWidth, buttonHeight, black, red, "Quit")
+        Rules = button("Rules", centered, topMenuButton, menuButtonWidth, menuButtonHeight, black, green, "Rules")
+        Play = button("Play", centered, middleMenuButton, menuButtonWidth, menuButtonHeight, black, green, "Play")
+        Quit = button("Exit", centered, bottomMenuButton, menuButtonWidth, menuButtonHeight, black, red, "Quit")
 
         pygame.display.update()
         timer.tick(15)
