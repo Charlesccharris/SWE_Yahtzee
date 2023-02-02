@@ -37,6 +37,7 @@ right = 400
 topMenuButton = 300
 middleMenuButton = 450
 bottomMenuButton = 600
+bottomRulesButton = 650
 
 ##Button size
 menuButtonWidth = 100
@@ -89,8 +90,8 @@ def rules_page():
 
         mouse = pygame.mouse.get_pos()
 
-        Back = button("Back", left, bottomMenuButton, menuButtonWidth, menuButtonHeight, black, green, "Back")
-        Quit = button("Exit", right, bottomMenuButton, menuButtonWidth, menuButtonHeight, black, red, "Quit")
+        Back = button("Back", left, bottomRulesButton, menuButtonWidth, menuButtonHeight, black, green, "Back")
+        Quit = button("Exit", right, bottomRulesButton, menuButtonWidth, menuButtonHeight, black, red, "Quit")
 
         pygame.display.update()
         timer.tick(15)
